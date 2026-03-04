@@ -36,6 +36,7 @@ const Signup = () => {
         alignItems: "center",
         justifyContent: "center",
         p: 2,
+        marginBottom:10
       }}
     >
       <Container
@@ -47,7 +48,7 @@ const Signup = () => {
           width: 450,
         }}
       >
-        <Typography variant="h4" fontWeight={600} align="center">
+        <Typography variant="h5" fontWeight={500} align="center">
           {!isLogin ? "Sign up" : "Log in"}
         </Typography>
 
