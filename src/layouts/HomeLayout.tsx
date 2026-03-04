@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Sidebar from "../components/SideBar";
 
 type propes = {
