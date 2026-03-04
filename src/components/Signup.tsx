@@ -44,7 +44,7 @@ const Signup = () => {
           borderRadius: 4,
           p: 5,
           boxShadow: 5,
-          width: 510,
+          width: 450,
         }}
       >
         <Typography variant="h4" fontWeight={600} align="center">
