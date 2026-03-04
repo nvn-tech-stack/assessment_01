@@ -42,10 +42,10 @@ const Sidebar = ({ open, toggleDrawer }: SidebarProps) => {
     <Drawer
       variant="permanent"
       sx={{
-        width: open ? 240 : 70,
+        width: open ? 200 : 70,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: open ? 240 : 70,
+          width: open ? 200 : 70,
           transition: "width 0.3s",
           overflowX: "hidden",
           display: "flex",
