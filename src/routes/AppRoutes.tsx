@@ -9,8 +9,7 @@ import Dashboard from "../views/Admin/Dashboard";
 
 const AppRouter = createBrowserRouter([
   {
-    path: "/login",
-
+    path: "/",
     element: <Login />,
   },
 
