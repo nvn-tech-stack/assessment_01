@@ -7,7 +7,7 @@ import RootLayout from "../layouts/RootLayout";
 // import ProtectRoutes from "./ProtectRoutes";
 import Dashboard from "../views/Admin/Dashboard";
 
-const Router = createBrowserRouter([
+const AppRouter = createBrowserRouter([
   {
     path: "/login",
 
@@ -40,4 +40,4 @@ const Router = createBrowserRouter([
   },
 ]);
 
-export default Router;
+export default AppRouter;
