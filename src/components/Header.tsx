@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";

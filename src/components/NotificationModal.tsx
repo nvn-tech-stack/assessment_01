@@ -24,7 +24,7 @@ function NotificationModal({
   openNotification,
   handleCloseNotification,
 }: NotificationProps) {
-  const [notificatonRead, setNotificationRead] = useState<boolean>(false);
+  const [notificatonRead] = useState<boolean>(false);
 
   return (
     <div>

@@ -4,7 +4,7 @@ import Login from "../views/Login";
 
 import RootLayout from "../layouts/RootLayout";
 
-import ProtectRoutes from "./ProtectRoutes";
+// import ProtectRoutes from "./ProtectRoutes";
 import Dashboard from "../views/Admin/Dashboard";
 
 const Router = createBrowserRouter([
