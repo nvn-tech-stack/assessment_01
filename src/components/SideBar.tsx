@@ -14,12 +14,8 @@ import {
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { RxDashboard } from "react-icons/rx";
-import { MdOutlineTask } from "react-icons/md";
-import { IoIosQrScanner } from "react-icons/io";
-import { AiOutlineSchedule } from "react-icons/ai";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineContactSupport } from "react-icons/md";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import GroupIcon from "@mui/icons-material/Group";
 
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
@@ -29,12 +25,18 @@ interface SidebarProps {
   toggleDrawer: () => void;
 }
 const Circle = styled("div")({
-  border: "10px solid #00bfa5",
+  border: "10px solid red",
   width: 30,
   height: 30,
   borderRadius: "50%",
   margin: "0px 5px",
   backgroundColor: "white",
+});
+const ButtonStyled = styled(ListItemButton)({
+  color: "white",
+  "&:hover": {
+    backgroundColor: "#545151dd",
+  },
 });
 
 const Sidebar = ({ open, toggleDrawer }: SidebarProps) => {
@@ -51,10 +53,16 @@ const Sidebar = ({ open, toggleDrawer }: SidebarProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
+          backgroundColor: "black",
+          color: "white",
         },
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          paddingLeft: 1,
+        }}
+      >
         <List>
           <ListItemButton
             sx={{
@@ -63,64 +71,37 @@ const Sidebar = ({ open, toggleDrawer }: SidebarProps) => {
           >
             <ListItemIcon>{open ? <Logo /> : <Circle />}</ListItemIcon>
           </ListItemButton>
+          <Link
+            to="/admin/dashboard"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <ButtonStyled>
+              <ListItemIcon>
+                <DashboardIcon fontSize="medium" sx={{ color: "white" }} />
+              </ListItemIcon>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <RxDashboard size={21} />
-            </ListItemIcon>
-            <Link
-              to="dashboard"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
               {open && (
                 <ListItemText sx={{ marginLeft: -3 }} primary="Dashboard" />
               )}
-            </Link>
-          </ListItemButton>
+            </ButtonStyled>
+          </Link>
+          <Link
+            to="/admin/user-management"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <ButtonStyled>
+              <ListItemIcon>
+                <GroupIcon sx={{ color: "white" }} fontSize="medium" />
+              </ListItemIcon>
 
-          <ListItemButton>
-            <ListItemIcon>
-              <MdOutlineTask size={21} />
-            </ListItemIcon>
-            {open && (
-              <ListItemText sx={{ marginLeft: -3 }} primary="Projects" />
-            )}
-          </ListItemButton>
-
-          <ListItemButton>
-            <ListItemIcon>
-              <IoIosQrScanner size={21} />
-            </ListItemIcon>
-            {open && (
-              <ListItemText sx={{ marginLeft: -3 }} primary="Schedule" />
-            )}
-          </ListItemButton>
-
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon>
-              <AiOutlineSchedule size={21} />
-            </ListItemIcon>
-            {open && (
-              <ListItemText sx={{ marginLeft: -3 }} primary="Notifications" />
-            )}
-          </ListItemButton>
-
-          <ListItemButton>
-            <ListItemIcon>
-              <IoSettingsOutline size={21} />
-            </ListItemIcon>
-            {open && (
-              <ListItemText sx={{ marginLeft: -3 }} primary="Settings" />
-            )}
-          </ListItemButton>
-
-          <ListItemButton>
-            <ListItemIcon>
-              <MdOutlineContactSupport size={21} />
-            </ListItemIcon>
-            {open && <ListItemText sx={{ marginLeft: -3 }} primary="Support" />}
-          </ListItemButton>
+              {open && (
+                <ListItemText
+                  sx={{ marginLeft: -3 }}
+                  primary="User Management"
+                />
+              )}
+            </ButtonStyled>
+          </Link>
         </List>
       </Box>
 
@@ -138,17 +119,25 @@ const Sidebar = ({ open, toggleDrawer }: SidebarProps) => {
 
           {open && (
             <Box sx={{ flexGrow: 1 }}>
-              <Typography variant="body2" fontWeight={600}>
+              <Typography
+                variant="body2"
+                sx={{ color: "white" }}
+                fontWeight={600}
+              >
                 Navin
               </Typography>
-              <Typography variant="caption" color="text.secondary">
+              <Typography sx={{ color: "white" }} variant="caption">
                 Security Lead
               </Typography>
             </Box>
           )}
 
           <IconButton onClick={toggleDrawer} size="small">
-            {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {open ? (
+              <ChevronLeftIcon sx={{ color: "white" }} />
+            ) : (
+              <ChevronRightIcon sx={{ color: "white" }} />
+            )}
           </IconButton>
         </Box>
       </Box>

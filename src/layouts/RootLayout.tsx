@@ -1,17 +1,16 @@
 import styled from "@emotion/styled";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import Sidebar from "../components/SideBar";
-
-type propes = {
-  children: ReactNode;
-};
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
+import Header from "../components/Header";
 
 const StyleContainer = styled("div")({
   display: "flex",
-  flexWrap: "wrap",
+  width: "100%",
 });
 
-const HomeLayout = ({ children }: propes) => {
+const RootLayout = () => {
   const [open, setOpen] = useState(true);
 
   const toggleDrawer = () => {
@@ -21,15 +20,17 @@ const HomeLayout = ({ children }: propes) => {
   return (
     <div>
       <StyleContainer>
+        <Header />
         <div className="left-con">
           <Sidebar open={open} toggleDrawer={toggleDrawer} />
         </div>
-        <div className="right-con">
-          <main>{children}</main>
-        </div>
+
+        <Box sx={{ mt: 8, ml: 1, mr: 5, width: "100%" }}>
+          <Outlet />
+        </Box>
       </StyleContainer>
     </div>
   );
 };
 
-export default HomeLayout;
+export default RootLayout;

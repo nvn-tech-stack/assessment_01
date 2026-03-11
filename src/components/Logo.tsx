@@ -8,25 +8,17 @@ const LogoHeader = styled("div")({
   alignItems: "center",
 });
 
-const Circle = styled("div")({
-  border: "10px solid #00bfa5",
-  width: 30,
-  height: 30,
-  borderRadius: "50%",
-  margin: "0px 5px",
-  backgroundColor: "white",
-});
-
 interface LogoProps {
   colorName?: string;
 }
 
-function Logo({ colorName = "#00bfa5" }: LogoProps) {
+function Logo({ colorName = "white" }: LogoProps) {
   return (
     <div>
       <LogoHeader>
-        <Circle />
-        <Typography sx={{ color: colorName }}>aps</Typography>
+        <Typography sx={{ color: colorName, fontWeight: "bold" ,fontSize:20}}>
+          Admin Portal
+        </Typography>
       </LogoHeader>
     </div>
   );

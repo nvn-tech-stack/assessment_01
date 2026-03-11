@@ -10,9 +10,8 @@ import {
   IconButton,
 } from "@mui/material";
 import { useState } from "react";
-import { FaMeta } from "react-icons/fa6";
+
 import { FcGoogle } from "react-icons/fc";
-import { IoLogoApple } from "react-icons/io5";
 
 import { RiEyeCloseLine } from "react-icons/ri";
 import { BsEye } from "react-icons/bs";
@@ -36,7 +35,7 @@ const Signup = () => {
         alignItems: "center",
         justifyContent: "center",
         p: 2,
-        marginBottom:10
+        marginBottom: 10,
       }}
     >
       <Container
@@ -104,11 +103,12 @@ const Signup = () => {
               mt: 3,
               py: 1.5,
               borderRadius: 10,
-              backgroundColor: "#1f9d8f",
-              "&:hover": { backgroundColor: "#17877a" },
+              backgroundColor: "#000000",
+              "&:hover": { backgroundColor: "#2e56c2" },
+              color: "white",
             }}
             onClick={() => {
-              navigate("home");
+              navigate("/admin/dashboard");
             }}
           >
             Login
@@ -121,8 +121,9 @@ const Signup = () => {
               mt: 3,
               py: 1.5,
               borderRadius: 10,
-              backgroundColor: "#1f9d8f",
-              "&:hover": { backgroundColor: "#17877a" },
+              backgroundColor: "#000000",
+              "&:hover": { backgroundColor: "#2e56c2" },
+              color: "white",
             }}
           >
             Create account
@@ -132,36 +133,12 @@ const Signup = () => {
         <Box mt={3} display="flex" justifyContent="space-between" gap={2}>
           <Button
             fullWidth
-            variant="contained"
-            sx={{
-              backgroundColor: "#000",
-              borderRadius: 10,
-              "&:hover": { backgroundColor: "#222" },
-            }}
-          >
-            <IoLogoApple size={30} />
-          </Button>
-
-          <Button
-            fullWidth
             variant="outlined"
             sx={{
               borderRadius: 10,
             }}
           >
             <FcGoogle size={30} />
-          </Button>
-
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{
-              backgroundColor: "#4267B2",
-              borderRadius: 10,
-              "&:hover": { backgroundColor: "#365899" },
-            }}
-          >
-            <FaMeta size={30} />
           </Button>
         </Box>
       </Container>
